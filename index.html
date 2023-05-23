@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>API Example</title>
+  </head>
+  <body>
+    <h1>API Example</h1>
+    <center><button onclick="getData()">Get Data</button></center>
+    <div id="data"></div>
+    <script>
+  //     function getData() {
+  //       fetch('http://localhost:8000/sql',{
+  //         headers: {
+  //   'Access-Control-Allow-Origin':'*'
+  // }
+  //       })
+  //         .then(response => response.json())
+  //         .then(data => {
+  //           console.log("LLLLL",data)
+  //           const container = document.getElementById('data');
+  //           container.innerHTML = '';
+  //           data.forEach(item => {
+  //             const element = document.createElement('p');
+  //             element.innerText = `${item.id}: ${item.name} - ${item.age}`;
+  //             container.appendChild(element);
+  //           });
+  //         })
+  //         .catch(error => console.error(error));
+  //     }
+      function getData() {
+        fetch('http://localhost:8000/sql',{
+          headers: {
+    'Access-Control-Allow-Origin':'*'
+  }
+        })
+          .then(response => response.json())
+          .then(data => {
+            var results = JSON.parse(data)
+            var r = results[0][0]
+            console.log("LLLLL",JSON.parse(data))
+            console.log("rrrrrrr",r)
+            const container = document.getElementById('data');
+            container.innerHTML = '';
+            // data.forEach(item => {
+            //   const element = document.createElement('p');
+            //   element.innerText = `${item.id}: ${item.name} - ${item.age}`;
+            //   container.appendChild(element);
+            // });
+          })
+          .catch(error => console.error(error));
+      }
+    </script>
+  </body>
+</html>
+
+#Plese help create code react js for get data from this API http://localhost:8000/sql
+

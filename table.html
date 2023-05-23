@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>API Data Table</title>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th>NO</th>
+          <th>Branch</th>
+          <th>Staff_Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in data %}
+        <tr>
+          <td>{{ <item class="NO"></item> }}</td>
+          <td>{{ <item class="Branch"></item> }}</td>
+          <td>{{ <item class="Staff_name"></item> }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>
